@@ -5,6 +5,7 @@ public class Game {
     private boolean doubleGoMoney;
     private ArrayList<BonusCard> bonusCards;
     private ArrayList<Space> spaces;
+    private Player activePlayer;
 
     public boolean isFreeParkingPot() {
         return freeParkingPot;
@@ -39,5 +40,26 @@ public class Game {
         this.spaces = spaces;
         this.freeParkingPot = freeParkingPot;
         this.doubleGoMoney = doubleGoMoney;
+    }
+
+    public void moveUpdate(){
+        if(isPlayerOnGo()){
+            activePlayer.modifyMoney(200);
+            //checks every time to player moves
+        }
+    }
+
+    public void stopUpdate(){
+        if(isPlayerOnGo()){
+            activePlayer.modifyMoney(400);
+            //only checks after the player has stopped
+        }
+    }
+
+    public boolean isPlayerOnGo(){
+        if(activePlayer.getPosition()==0){
+            return true;
+        }
+        return false;
     }
 }
