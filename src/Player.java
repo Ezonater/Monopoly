@@ -17,8 +17,9 @@ public class Player{
         this.game = game;
     }
 
-    public Player(String name){
+    public Player(String name, Game game){
         this.name = name;
+        this.game = game;
     }
 
     public void modifyMoney(int amount){
@@ -74,5 +75,9 @@ public class Player{
 
     public void setGame(Game game) {
         this.game = game;
+    }
+
+    @Override public String toString(){
+        return name;
     }
 }

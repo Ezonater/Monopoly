@@ -5,6 +5,7 @@ public class Game {
     private boolean doubleGoMoney;
     private ArrayList<BonusCard> bonusCards;
     private ArrayList<Space> spaces;
+    private ArrayList<Player> players;
     private Player activePlayer;
 
     public boolean isFreeParkingPot() {
@@ -28,16 +29,10 @@ public class Game {
         doubleGoMoney = false;
     }
 
-    public Game(ArrayList bonusCards,ArrayList spaces){
+    public Game(ArrayList bonusCards,ArrayList spaces, ArrayList<Player> players, boolean freeParkingPot, boolean doubleGoMoney){
         this.bonusCards = bonusCards;
         this.spaces = spaces;
-        this.freeParkingPot = false;
-        this.doubleGoMoney = false;
-    }
-
-    public Game(ArrayList bonusCards,ArrayList spaces, boolean freeParkingPot, boolean doubleGoMoney){
-        this.bonusCards = bonusCards;
-        this.spaces = spaces;
+        this.players = players;
         this.freeParkingPot = freeParkingPot;
         this.doubleGoMoney = doubleGoMoney;
     }
