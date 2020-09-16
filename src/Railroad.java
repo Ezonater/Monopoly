@@ -1,2 +1,2 @@
-public class Railroad extends Space {
+public class Railroad extends Property {
 }
